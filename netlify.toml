@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA routing for React Router (Home / Movie Details / Favorites / Login)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

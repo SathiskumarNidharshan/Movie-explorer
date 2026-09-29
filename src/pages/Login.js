@@ -59,7 +59,6 @@ const Login = () => {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
         minHeight: '100dvh',
         display: 'grid',
         placeItems: 'center',

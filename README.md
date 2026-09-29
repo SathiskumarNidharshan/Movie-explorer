@@ -96,10 +96,22 @@ There is no backend auth. Use any username and a password with at least 4 charac
 
 ## Deploy (Vercel / Netlify)
 
-1. Push this folder to GitLab / GitHub
-2. Import the project in Vercel or Netlify
-3. Set `REACT_APP_TMDB_API_KEY` (and optional base URL vars) in the host’s environment settings
-4. Build command: `npm run build` · Publish directory: `build`
+### Netlify
+1. Push the `movie-explorer` folder to GitHub (repo root should be this app, or set **Base directory** to `movie-explorer`)
+2. Build settings (also in `netlify.toml`):
+   - **Build command:** `npm run build`
+   - **Publish directory:** `build`
+   - **Node version:** `20`
+3. Site settings → Environment variables:
+   - `REACT_APP_TMDB_API_KEY` = your TMDb API key
+   - (optional) `REACT_APP_TMDB_BASE_URL` = `https://api.themoviedb.org/3`
+   - (optional) `REACT_APP_TMDB_IMAGE_BASE` = `https://image.tmdb.org/t/p`
+4. Deploy. SPA redirects are already configured via `netlify.toml` / `public/_redirects`.
+
+### Vercel
+1. Import the repo
+2. Build command: `npm run build` · Output: `build`
+3. Set the same `REACT_APP_*` environment variables
 
 ## License
 
